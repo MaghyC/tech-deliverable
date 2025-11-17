@@ -1,0 +1,86 @@
+
+
+.App {
+    max-width: 620px;
+    margin: 48px auto;
+    padding: 32px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(60, 105, 150, 0.08);
+}
+
+h1 {
+    font-size: 2em;
+    color: #0057b8;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.15em;
+    color: #36485c;
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: #e3eafc;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(140,170,220,0.07);
+}
+
+
+
+
+
+button[type="submit"] {
+    align-self: flex-start;
+    padding: 7px 24px;
+    background: linear-gradient(90deg, #0057b8 65%, #33b5e5 100%);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0 2px 10px rgba(50,100,170,0.08);
+    cursor: pointer;
+    margin-top: 8px;
+}
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #003973 65%, #0057b8 100%);
+}
+
+
+
+.messages {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quote-item {
+    padding: 12px 18px;
+    background: #f1f7fe;
+    border-left: 4px solid #0057b8;
+    border-radius: 7px;
+    box-shadow: 0 1px 8px rgba(90,105,120,0.04);
+    font-size: 1.05em;
+    color: #222;
+    transition: box-shadow 0.2s;
+}
+.quote-item:hover {
+    box-shadow: 0 4px 20px rgba(60, 105, 150, 0.10);
+    background: #e2eafc;
+}
+
+.quote-item span {
+    font-size: 0.90em;
+    color: #637ba1;
+    margin-left: 10px;
+    font-style: italic;
+}

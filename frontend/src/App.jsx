@@ -67,7 +67,6 @@ function App() {
 
 			<h2>Submit a quote</h2>
 			{/*  √√√  TODO: implement custom form submission logic to not refresh the page */}
-			
 			<form onSubmit={handleFormSubmit}>
 				<label htmlFor="input-name">Name</label>
 				<input type="text" name="name" id="input-name" required value={form.name} onChange={handleInputChange}/>
@@ -91,7 +90,7 @@ function App() {
                 <option value="all">All</option>
             </select>
             <div className="messages">
-                {quotes.map((q, i) => (
+                {quotes.slice().reverse().map((q, i) => (
                     <QuoteItem {...q} key={i} />
                 ))}
 			
