@@ -48,3 +48,33 @@ def post_message(name: str = Form(), message: str = Form()) -> RedirectResponse:
 
 
 # TODO: add another API route with a query parameter to retrieve quotes based on max age
+
+
+from fastapi import Query
+from datetime import datetime, timedelta
+
+@app.get("/quotes")
+def get_quotes(max_age: str = Query("all")):
+    """
+    Retrieve quotes filtered by age.
+    max_age options: "week", "month", "year", "all"
+    """
+    now = datetime.now()
+
+    # timedelta calculates the difference of time automatically
+    if max_age == "week":
+        cutoff = now - timedelta(weeks=1)
+    elif max_age == "month":
+        cutoff = now - timedelta(days=30)
+    elif max_age == "year":
+        cutoff = now - timedelta(days=365)
+    else:
+        cutoff = None
+
+    result = []
+    for quote in database["quotes"]:
+        quote_time = datetime.fromisoformat(quote["time"])
+        if not cutoff or quote_time >= cutoff:
+            result.append(quote)
+    return result
+
